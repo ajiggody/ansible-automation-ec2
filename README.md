@@ -1,16 +1,11 @@
-# Ansible Automation - Web Server Deployment
+# Ansible Automation — Web Server Deployment
 
-## Overview
-This project automates the deployment of an Apache HTTPD web server on a RHEL 9 EC2 instance using Ansible roles, Jinja2 templates, and idempotent playbooks.
-
-## # Ansible Automation — Web Server Deployment
-
-## Overview
+# Overview
 This project automates the deployment and configuration of an Apache 
 HTTPD web server on a RHEL 9 EC2 instance using Ansible roles, 
 Jinja2 templates, and idempotent playbooks.
 
-## Environment
+# Environment
 - Cloud: AWS EC2 (t3.small)
 - OS: Red Hat Enterprise Linux 9
 - Ansible: Installed via pip3
@@ -79,10 +74,7 @@ curl http://127.0.0.1 (output should be in HTML)
   safe.directory config
 
 ## Idempotency Proof
-Running the playbook a second time returns changed=0 confirming
+Running the playbook a second time returned "changed=0" confirming
 the system was already in the desired state and no unnecessary
 changes were made.
 
-## RHCE Portfolio Series
-This is Project 1 of 4 built while preparing for my RHCE 
-certification (target: June 2026)
