@@ -72,6 +72,10 @@ curl http://127.0.0.1 (output should be in HTML)
   EC2 security group for port 80
 - Git ownership conflict from using sudo — fixed with chown and
   safe.directory config
+- Discovered AWS dynamically reassigns public IPs after every 
+   stop/start. I allocated an Elastic IP to maintain a static 
+   address, lock SSH to My IP only editing the security rules, and minimized costs while 
+   the instance is running
 
 ## Idempotency Proof
 Running the playbook a second time returned "changed=0" confirming
