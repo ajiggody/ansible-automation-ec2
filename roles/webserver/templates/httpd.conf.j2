@@ -1,0 +1,12 @@
+ServerRoot "/etc/httpd"
+Listen {{ http_port | default(80) }}
+ServerAdmin {{ server_admin | default('admin@example.com') }}
+DocumentRoot "/var/www/html"
+
+<Directory "/var/www/html">
+    AllowOverride None
+    Require all granted
+</Directory>
+
+ErrorLog "logs/error_log"
+LogLevel warn

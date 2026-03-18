@@ -1,0 +1,20 @@
+---
+- name: Install Apache HTTPD
+  ansible.builtin.package:
+    name: httpd
+    state: present
+
+- name: Ensure HTTPD is started and enabled
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: true
+
+- name: Deploy custom HTTPD config from template
+  ansible.builtin.template:
+    src: httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart HTTPD

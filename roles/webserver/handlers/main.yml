@@ -1,0 +1,10 @@
+---
+- name: Restart HTTPD
+  ansible.builtin.service:
+    name: httpd
+    state: restarted
+
+- name: Reload Firewalld
+  ansible.builtin.service:
+    name: firewalld
+    state: reloaded

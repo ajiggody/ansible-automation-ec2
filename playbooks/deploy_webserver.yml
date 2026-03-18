@@ -1,0 +1,10 @@
+---
+- name: Deploy and configure Apache web server
+  hosts: webserver
+  become: true
+  roles:
+    - webserver
+  vars: 
+    http_port: 80
+    server_admin: admin@yourdomain.com
+
