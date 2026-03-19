@@ -1,4 +1,8 @@
 ServerRoot "/etc/httpd"
+
+# Include all default module configs
+IncludeOptional conf.modules.d/*.conf
+
 Listen {{ http_port | default(80) }}
 ServerAdmin {{ server_admin | default('admin@example.com') }}
 DocumentRoot "/var/www/html"
@@ -10,3 +14,5 @@ DocumentRoot "/var/www/html"
 
 ErrorLog "logs/error_log"
 LogLevel warn
+
+IncludeOptional conf.d/*.conf
